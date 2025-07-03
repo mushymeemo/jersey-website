@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jersey Design by [Mant00l]</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="overlay">
+      <h1>🏆 Mant00l Jersey Design</h1>
+      <nav>
+        <a href="#gallery">Gallery</a>
+        <a href="#order">Order</a>
+        <a href="#chatbot">Chat</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="gallery">
+    <h2>Our Designs</h2>
+    <div class="designs">
+      <div class="card">
+        <img src="design1.jpg" alt="Design 1" onclick="openLightbox(this)">
+        <h3>Street Warrior</h3>
+        <p>Price: RM59</p>
+      </div>
+      <div class="card">
+        <img src="design2.jpg" alt="Design 2" onclick="openLightbox(this)">
+        <h3>Crimson Blaze</h3>
+        <p>Price: RM69</p>
+      </div>
+      <div class="card">
+        <img src="design3.jpg" alt="Design 3" onclick="openLightbox(this)">
+        <h3>Phantom Black</h3>
+        <p>Price: RM79</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="order">
+    <h2>Order Your Jersey</h2>
+    <form id="orderForm">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="design">Select Design:</label>
+      <select id="design" name="design" required>
+        <option value="" data-price="0">-- Select a Design --</option>
+        <option value="Design 1 (RM59.90)" data-price="59.90">Design 1 (RM 59.90)</option>
+        <option value="Design 2 (RM69.90)" data-price="69.90">Design 2 (RM 69.90)</option>
+        <option value="Design 3 (RM79.90)" data-price="79.90">Design 3 (RM 79.90)</option>
+      </select>
+
+      <label>Quantity per Size:</label>
+      <div class="size-inputs">
+        <div>
+          <label for="qtyS">Size S</label>
+          <input type="number" id="qtyS" min="0" value="0" />
+        </div>
+        <div>
+          <label for="qtyM">Size M</label>
+          <input type="number" id="qtyM" min="0" value="0" />
+        </div>
+        <div>
+          <label for="qtyL">Size L</label>
+          <input type="number" id="qtyL" min="0" value="0" />
+        </div>
+        <div>
+          <label for="qtyXL">Size XL</label>
+          <input type="number" id="qtyXL" min="0" value="0" />
+        </div>
+      </div>
+
+      <div class="total-price" id="totalPrice">Total Price: RM 0.00</div>
+
+      <button type="button" onclick="sendToWhatsApp()">Send Order via WhatsApp</button>
+    </form>
+  </section>
+
+  <section id="chatbot">
+    <h2>Chat With Us</h2>
+    <iframe
+      src="https://www.chatbase.co/chatbot-iframe/YOUR_CHATBOT_ID"
+      width="100%"
+      style="height: 500px"
+      frameborder="0">
+    </iframe>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 [Your Business Name]. All rights reserved.</p>
+  </footer>
+
+  <div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Large view" />
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
